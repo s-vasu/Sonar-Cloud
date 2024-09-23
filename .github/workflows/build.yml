@@ -20,7 +20,7 @@ jobs:
      - name: Install Dependencies
        run: npm install
      - name: Test and coverage
-       run: npm test src/ --watchAll
+       run: npm test src/
      - name: SonarCloud Scan
        with:
          projectBaseDir: ./myapp
