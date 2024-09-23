@@ -4,7 +4,8 @@ const config: Config = {
   preset: "ts-jest",
   testEnvironment: "jsdom",
   collectCoverage: true,
-
+  coverageDirectory: "./coverage",
+  coverageReporters: ["lcov", "text"],
   // Collect coverage for these files (include)
   collectCoverageFrom: [
     "src/**/*.{ts,tsx}", // Include all TypeScript and TSX files in src
