@@ -16,9 +16,9 @@ const config: Config = {
     "src/theme/**", // Exclude theme files
     "src/declarations.d.ts", // Exclude TypeScript declaration files
     "src/utils/constant.tsx", // Exclude specific utility file
-    "src/App.tsx", // Exclude main app file
-    "src/index.tsx", // Exclude index entry point
-    "src/reportWebVitals.ts", // Exclude reportWebVitals file
+    // "src/App.tsx", // Exclude main app file
+    // "src/index.tsx", // Exclude index entry point
+    // "src/reportWebVitals.ts", // Exclude reportWebVitals file
     "src/store/**", // Exclude store directory
     "src/services/**", // Exclude services directory
   ],
