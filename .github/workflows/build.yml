@@ -20,7 +20,7 @@ jobs:
      - name: Install Dependencies
        run: npm install
      - name: Test and coverage
-       run: npm test 
+       run: npm test -- --coverage
      - name: check dir
        run: ls -l
      - name: list locv
