@@ -18,6 +18,7 @@ function App() {
         >
           Learn React
         </a>
+        <p>content of component 2</p>
       </header>
     </div>
   );
