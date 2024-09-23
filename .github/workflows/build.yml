@@ -20,7 +20,11 @@ jobs:
      - name: Install Dependencies
        run: npm install
      - name: Test and coverage
-       run: npm react-scripts test -- --coverage 
+       run: npm test 
+     - name:check dir
+       run: ls -l
+     - name: list locv
+       run: cat ./coverage/lcov.info 
      - name: SonarCloud Scan
        with:
          projectBaseDir: ./myapp
