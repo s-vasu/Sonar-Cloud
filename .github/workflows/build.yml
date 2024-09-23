@@ -21,7 +21,7 @@ jobs:
        run: npm install
      - name: Test and coverage
        run: npm test 
-     - name:check dir
+     - name: check dir
        run: ls -l
      - name: list locv
        run: cat ./coverage/lcov.info 
