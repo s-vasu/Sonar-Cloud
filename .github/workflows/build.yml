@@ -38,6 +38,6 @@ jobs:
        with:
           projectBaseDir: ./myapp
           args: >
-            -Dsonar.projectKey=my_actual_project_key
-            -Dsonar.organization=my_actual_organization
+            -Dsonar.projectKey=s-vasu_sonar-cloud
+            -Dsonar.organization=s-vasu
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
