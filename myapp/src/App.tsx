@@ -19,6 +19,7 @@ function App() {
           Learn React
         </a>
         <p>code</p>
+        <p>coverage check</p>
       </header>
     </div>
   );
