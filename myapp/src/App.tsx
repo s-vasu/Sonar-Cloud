@@ -19,6 +19,7 @@ function App() {
           Learn React
         </a>
         <p>content of component 2</p>
+        <p>content of component 3</p>
       </header>
     </div>
   );
