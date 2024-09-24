@@ -29,7 +29,7 @@ jobs:
        uses: SonarSource/sonarcloud-github-action@master
        with:
          projectBaseDir: ./myapp
-          args: >
+          args:
             -Dsonar.projectKey=your_project_key
             -Dsonar.organization=your_organization
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
