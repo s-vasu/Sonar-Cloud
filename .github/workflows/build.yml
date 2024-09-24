@@ -26,13 +26,13 @@ jobs:
      - name: list locv
        run: cat ./coverage/lcov.info 
      - name: SonarCloud Scan
-       uses: SonarSource/sonarcloud-github-action@master
        with:
          projectBaseDir: ./myapp
-          args:
+          args: >
             -Dsonar.projectKey=your_project_key
             -Dsonar.organization=your_organization
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+       uses: SonarSource/sonarcloud-github-action@master
        env:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
