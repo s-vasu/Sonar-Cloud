@@ -14,17 +14,30 @@ jobs:
      run:
        working-directory: ./myapp
    steps:
-     - uses: actions/checkout@v2
+     - uses: actions/checkout@v3
        with:
          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
-     - name: Install Dependencies
-       run: npm install --legacy-peer-deps
-     - name: Test and coverage
-       run: npm test src/
-     - name: SonarCloud Scan
+     - name: Set up Node.js
+       uses: actions/setup-node@v3
        with:
-         projectBaseDir: ./myapps
+        node-version: '20'
+     - name: Install Dependencies
+       run: npm install
+     - name: Test and coverage
+       run: npm test -- --coverage --ci --verbose
+     - name: check dir
+       run: ls -l
+     - name: list locv
+       run: cat ./coverage/lcov.info 
+     - name: SonarCloud Scan
        uses: SonarSource/sonarcloud-github-action@master
        env:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+         SONAR_SCANNER_OPTS: "-Xdebug"
+       with:
+          projectBaseDir: ./myapp
+          args: >
+            -Dsonar.projectKey=s-vasu_sonar-cloud
+            -Dsonar.organization=s-vasu
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
